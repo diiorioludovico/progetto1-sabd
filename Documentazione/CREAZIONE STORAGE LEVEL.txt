@@ -1,0 +1,39 @@
+CREAZIONE STORAGE LEVEL:
+Creato un volume Docker con dentro il contenuto del file zip project-1-data.tar.gz
+
+-> docker pull matnar/hadoop
+
+create a small network named hadoop_network with one namenode (master) and 2 datanodes (slave)
+-> docker network create --driver bridge progetto1-network //rete che contiene cluster hdfs e cluster pyspark
+-> docker run -t -i -p 9864:9864 -d --network=progetto1-network --name=hdfs-slave1 matnar/hadoop
+-> docker run -t -i -p 9863:9864 -d --network=progetto1-network --name=hdfs-slave2 matnar/hadoop
+-> docker run -t -i -p 9870:9870 -p 54310:54310 -d --network=progetto1-network --name=master -v master-volume:/hadoop/dfs/data matnar/hadoop
+
+Dalla shell del container master (si entra con 'docker exec -it master bash'), inizializziamo il HDFS
+-> hdfs namenode –format
+
+Avvio di HDFS:
+-> $HADOOP_HOME/sbin/start-dfs.sh
+
+Per terminare HDFS:
+-> $HADOOP_HOME/sbin/stop-dfs.sh 
+
+Impostiamo una directory padre
+-> hdfs dfs -mkdir -p /user/root
+
+Aggiungere cartella data:
+-> hdfs dfs -mkdir /user/root/data
+
+Ci spostiamo nella cartella che contiene i file da caricare nel file system distribuito
+-> cd /hadoop/dfs/data
+
+Carichiamo i file sul file system distribuito
+-> hdfs dfs -put 202501_T_ONTIME_REPORTING.csv data/
+-> hdfs dfs -put 202502_T_ONTIME_REPORTING.csv data/
+-> hdfs dfs -put 202503_T_ONTIME_REPORTING.csv data/
+-> hdfs dfs -put 202504_T_ONTIME_REPORTING.csv data/
+
+Per visualizzare i file in una directory
+-> hdfs dfs -ls /user/root/data
+
+

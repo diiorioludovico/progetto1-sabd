@@ -1,0 +1,23 @@
+FROM matnar/hadoop:3.3.2
+
+# HDFS
+EXPOSE 9870
+EXPOSE 9000
+EXPOSE 9864
+EXPOSE 9866
+EXPOSE 54310
+
+# YARN
+EXPOSE 8088
+EXPOSE 8042
+
+# History Server
+EXPOSE 19888
+
+COPY master/start.sh /app/
+
+WORKDIR /app
+
+
+
+

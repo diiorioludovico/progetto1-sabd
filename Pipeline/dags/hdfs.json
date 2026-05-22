@@ -1,0 +1,6 @@
+{
+  "host": "hdfs://master:",
+  "port": "54310",
+  "directory": "/user/root/data/",
+  "RDD_Dataframe": "RDD"
+}
