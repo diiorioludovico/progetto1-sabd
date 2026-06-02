@@ -2,5 +2,7 @@
   "host": "hdfs://master:",
   "port": "54310",
   "directory": "/user/root/data/",
-  "RDD_Dataframe": "RDD"
+  "RDD_Dataframe": "RDD",
+  "num_partitions": "0",
+  "num_cores": "0"
 }

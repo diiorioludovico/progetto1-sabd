@@ -1,9 +1,0 @@
-Per fare la build del cluster:
--> docker-compose up --scale spark-worker=2
-
-Entro nel master:
--> docker exec -it pyspark-master bash
-
-Avvio il job:
--> /opt/spark/bin/spark-submit --master spark://spark-master:7077 app.py
-

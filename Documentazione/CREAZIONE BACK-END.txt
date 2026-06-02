@@ -1,5 +1,0 @@
-CREAZIONE BACK-END
-
-Scarichiamo l'immagine apache/spark-py da Docker Hub
--> docker pull apache/spark-py:v3.4.0
-

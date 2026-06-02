@@ -1,0 +1,16 @@
+FROM matnar/hadoop:3.3.2
+
+# HDFS
+EXPOSE 9870
+EXPOSE 9000
+EXPOSE 9864
+EXPOSE 9866
+EXPOSE 54310
+
+COPY master/start.sh /app/
+
+WORKDIR /app
+
+
+
+

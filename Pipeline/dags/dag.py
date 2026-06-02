@@ -6,8 +6,6 @@ from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOpe
 import json
 from  pathlib import Path
 
-import logging
-
 CONFIG_PATH = Path("/opt/airflow/dags/hdfs.json")
 
 with open(CONFIG_PATH) as f:
@@ -44,7 +42,8 @@ with DAG(
             config["host"],
             config["port"],
             config["directory"],
-            config["RDD_Dataframe"]
+            config["RDD_Dataframe"],
+            config["num_partitions"]
         ]
     )
 
@@ -60,7 +59,8 @@ with DAG(
             config["host"],
             config["port"],
             config["directory"],
-            config["RDD_Dataframe"]
+            config["RDD_Dataframe"],
+            config["num_cores"]
         ]
     )
 
