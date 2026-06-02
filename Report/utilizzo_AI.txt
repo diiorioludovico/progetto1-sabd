@@ -1,0 +1,7 @@
+Questo documento serve per dichiarare dove sono stai utilizzati gli strumenti di AI.
+
+- Per la realizzazione del progetto è stato usato uno strumento di AI: Perplexity Pro.
+
+- L'AI è stata utilizzata come strumento di supporto per la realizzazione, ovvero per accedere più rapidamente a informazione
+  nella documentazione sia lato codice che di funzionamento di un framework, per debugging e capire il significato di determinati
+  errori. L'unica parte interamente fatta dall'AI è il notebook queries_analysis.zpln.
